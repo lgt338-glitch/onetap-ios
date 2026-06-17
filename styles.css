@@ -92,8 +92,9 @@ html { scroll-behavior: smooth; }
 
 /* HERO VISUAL */
 .hero-visual { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
-.hero-real { width: 100%; max-width: 460px; aspect-ratio: 1; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.18); position: relative; background: #f5f5f7; }
+.hero-real { width: 100%; max-width: 460px; aspect-ratio: 1; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.18); position: relative; background: linear-gradient(135deg, #f5f5f7 0%, #e5e5ea 100%); display: flex; align-items: center; justify-content: center; }
 .hero-real img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-real img:not([src]), .hero-real img[src=""] { display: none; }
 .hero-real .hero-badge-float { position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); padding: 10px 16px; border-radius: 14px; font-size: 13px; font-weight: 700; color: #1d1d1f; box-shadow: 0 6px 18px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 8px; }
 .hero-real .hero-badge-float .dot-green { width: 8px; height: 8px; background: #34c759; border-radius: 50%; box-shadow: 0 0 0 4px rgba(52,199,89,0.2); }
 .phone-mockup { width: 200px; height: 400px; background: linear-gradient(145deg, #1d1d1f, #2c2c2e); border-radius: 36px; padding: 10px; box-shadow: 0 24px 48px rgba(0,0,0,0.22), 0 0 0 6px rgba(255,255,255,0.5); position: relative; }
@@ -104,11 +105,8 @@ html { scroll-behavior: smooth; }
 .phone-screen .ios-progress { width: 80%; height: 5px; background: rgba(255,255,255,0.3); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
 .phone-screen .ios-progress-bar { width: 75%; height: 100%; background: white; border-radius: 3px; }
 .phone-screen .ios-status { font-size: 11px; opacity: 0.9; }
-.floating-icon { position: absolute; background: white; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
-.float-1 { top: 10%; left: 5%; animation: float 3s ease-in-out infinite; }
-.float-2 { top: 20%; right: 5%; animation: float 3s ease-in-out infinite 0.5s; }
-.float-3 { bottom: 20%; left: 0%; animation: float 3s ease-in-out infinite 1s; }
-.float-4 { bottom: 10%; right: 8%; animation: float 3s ease-in-out infinite 1.5s; }
+.floating-icon { display: none; }
+.float-1, .float-2, .float-3, .float-4 { display: none; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
 /* TRUST BAR */
