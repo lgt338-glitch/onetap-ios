@@ -603,29 +603,30 @@
 
 <script>
   const reviewData = {
-    0: [ // 사용자 후기 - 실제 인물 사진
-      { img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=480&fit=crop&q=80", text: "iPhone 아이폰이 갑자기 애플 로고에서 멈춰서 엄청 당황했는데, OneTap ReBoot 사용하니까 몇 분 만에 바로 해결됐어요. 데이터도 안 날아가서 진짜 다행입니다 :)", name: "김유미" },
-      { img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=480&fit=crop&q=80", text: "아이폰 바꾸면서 데이터 옮겨야 해서 OneTap Transfer 써봤는데, 케이블만 꽂으면 돼서 진짜 편했어요. 처음이라 걱정했는데 생각보다 쉽게 끝났네요~", name: "김마리" },
-      { img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&h=480&fit=crop&q=80", text: "비밀번호를 잊어버려서 아이폰 잠금이 안 풀렸는데, OneTap UnLock으로 금방 해결됐어요. 진작 알았으면 좋았을 텐데요!", name: "박지훈" },
+    0: [ // 사용자 후기 - 한국인 인물
+      { img: "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=500&h=480&fit=crop&q=80", text: "iPhone 아이폰이 갑자기 애플 로고에서 멈춰서 엄청 당황했는데, OneTap ReBoot 사용하니까 몇 분 만에 바로 해결됐어요. 데이터도 안 날아가서 진짜 다행입니다 :)", name: "김유미" },
+      { img: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=500&h=480&fit=crop&q=80", text: "아이폰 바꾸면서 데이터 옮겨야 해서 OneTap Transfer 써봤는데, 케이블만 꽂으면 돼서 진짜 편했어요. 처음이라 걱정했는데 생각보다 쉽게 끝났네요~", name: "김마리" },
+      { img: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=500&h=480&fit=crop&q=80", text: "비밀번호를 잊어버려서 아이폰 잠금이 안 풀렸는데, OneTap UnLock으로 금방 해결됐어요. 진작 알았으면 좋았을 텐데요!", name: "박지훈" },
     ],
-    1: [ // SNS 반응
-      { img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&h=480&fit=crop&q=80", text: "인스타 사진 실수로 다 지웠다가 OneTap Recover로 살려냄ㅠㅠ 진짜 천재 프로그램. 친구들한테 다 추천했어요 #OneTapiOS", name: "@minji_____" },
-      { img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=480&fit=crop&q=80", text: "트위터에서 추천받고 써봤는데 카톡 5년 치 백업 한 번에 됨ㅋㅋ 기종변경 두렵지 않다 이제. 별 다섯개 만점!!", name: "@swiftcoder_kr" },
-      { img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=500&h=480&fit=crop&q=80", text: "유튜브에서 보고 산 OneTap UnLock... 진짜 5분 만에 잠금 풀림. 비싸지도 않고 한국어 지원도 좋고 만족 200%", name: "@techreview_yt" },
+    1: [ // SNS 반응 - 한국인 인물
+      { img: "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=500&h=480&fit=crop&q=80", text: "인스타 사진 실수로 다 지웠다가 OneTap Recover로 살려냄ㅠㅠ 진짜 천재 프로그램. 친구들한테 다 추천했어요 #OneTapiOS", name: "@minji_____" },
+      { img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=500&h=480&fit=crop&q=80", text: "트위터에서 추천받고 써봤는데 카톡 5년 치 백업 한 번에 됨ㅋㅋ 기종변경 두렵지 않다 이제. 별 다섯개 만점!!", name: "@swiftcoder_kr" },
+      { img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&h=480&fit=crop&q=80", text: "유튜브에서 보고 산 OneTap UnLock... 진짜 5분 만에 잠금 풀림. 비싸지도 않고 한국어 지원도 좋고 만족 200%", name: "@techreview_yt" },
     ],
-    2: [ // 미디어 리뷰
-      { img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=500&h=480&fit=crop&q=80", text: "\"OneTap iOS의 한 번 클릭 복구는 일반 사용자도 부담 없이 사용할 수 있는 가장 직관적인 솔루션이다.\"", name: "디지털타임스" },
-      { img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&h=480&fit=crop&q=80", text: "\"국내 iOS 복구 도구 중 가장 빠른 처리 속도와 높은 성공률을 기록. 특히 한국어 고객 지원이 인상적.\"", name: "테크플러스" },
-      { img: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=500&h=480&fit=crop&q=80", text: "\"기업용으로도 활용 가능한 안정성. 데이터 보존율이 업계 최고 수준이며 보안 인증도 갖추고 있다.\"", name: "IT 비즈니스" },
+    2: [ // 미디어 리뷰 - 한국인 기자/전문가
+      { img: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&h=480&fit=crop&q=80", text: "\"OneTap iOS의 한 번 클릭 복구는 일반 사용자도 부담 없이 사용할 수 있는 가장 직관적인 솔루션이다.\"", name: "디지털타임스" },
+      { img: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=500&h=480&fit=crop&q=80", text: "\"국내 iOS 복구 도구 중 가장 빠른 처리 속도와 높은 성공률을 기록. 특히 한국어 고객 지원이 인상적.\"", name: "테크플러스" },
+      { img: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=500&h=480&fit=crop&q=80", text: "\"기업용으로도 활용 가능한 안정성. 데이터 보존율이 업계 최고 수준이며 보안 인증도 갖추고 있다.\"", name: "IT 비즈니스" },
     ],
   };
   function renderReviewCards(idx) {
     const grid = document.getElementById('reviewsGrid');
+    const fallback = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=480&fit=crop&q=80';
     grid.innerHTML = reviewData[idx].map(r => `
       <div class="review-card-new">
         <div class="review-image-area">
           <div class="quote-mark">"</div>
-          <img class="real" src="${r.img}" alt="${r.name}" loading="lazy">
+          <img class="real" src="${r.img}" alt="${r.name}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}';">
         </div>
         <div class="review-content-new">
           <p class="review-text-new">${r.text}</p>
