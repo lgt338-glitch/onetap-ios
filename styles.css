@@ -285,6 +285,57 @@ html { scroll-behavior: smooth; }
 .footer-badges { display: flex; gap: 12px; align-items: center; }
 .footer-badges span { padding: 4px 10px; background: #2c2c2e; border-radius: 6px; font-size: 11px; font-weight: 600; color: #a1a1a6; }
 
+/* AUTH MODAL (Login/Signup) */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; opacity: 0; transition: opacity 0.25s; }
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-box { background: white; border-radius: 24px; width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto; position: relative; padding: 40px 36px; box-shadow: 0 30px 80px rgba(0,0,0,0.3); transform: translateY(20px); transition: transform 0.3s; }
+.modal-overlay.active .modal-box { transform: translateY(0); }
+.modal-close { position: absolute; top: 16px; right: 16px; background: #f5f5f7; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 20px; cursor: pointer; color: #515154; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.modal-close:hover { background: #e5e5ea; }
+.modal-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; font-size: 22px; font-weight: 800; color: #007aff; }
+.modal-logo .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, #007aff, #5ac8fa); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 18px; box-shadow: 0 2px 8px rgba(0,122,255,0.3); }
+.modal-tabs { display: flex; margin-bottom: 24px; border-bottom: 1px solid #e5e5ea; }
+.mtab { flex: 1; padding: 14px 0; background: none; border: none; border-bottom: 3px solid transparent; font-size: 15px; font-weight: 700; color: #86868b; cursor: pointer; margin-bottom: -1px; transition: all 0.2s; }
+.mtab.active { color: #007aff; border-bottom-color: #007aff; }
+.mtab:hover:not(.active) { color: #1d1d1f; }
+.auth-form { display: flex; flex-direction: column; gap: 12px; }
+.auth-form.hidden { display: none; }
+.signup-badge { background: linear-gradient(135deg, #ff6b00, #ff9500); color: white; padding: 10px 16px; border-radius: 12px; font-size: 13px; font-weight: 700; text-align: center; margin-bottom: 4px; }
+.auth-form input[type="text"], .auth-form input[type="email"], .auth-form input[type="password"] { padding: 14px 16px; border: 1px solid #e5e5ea; border-radius: 10px; font-size: 14px; font-family: inherit; transition: border-color 0.2s; outline: none; }
+.auth-form input:focus { border-color: #007aff; box-shadow: 0 0 0 3px rgba(0,122,255,0.1); }
+.form-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin: 4px 0; }
+.form-row label { display: flex; align-items: center; gap: 6px; color: #515154; cursor: pointer; }
+.form-link { color: #007aff; font-weight: 600; }
+.form-link:hover { text-decoration: underline; }
+.terms-check { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #515154; padding: 8px 0; line-height: 1.5; }
+.terms-check input { margin-top: 2px; flex-shrink: 0; }
+.terms-check a { color: #007aff; font-weight: 600; }
+.auth-btn { padding: 14px; background: #007aff; color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-top: 4px; }
+.auth-btn:hover { background: #0051d5; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,122,255,0.3); }
+.social-divider { display: flex; align-items: center; color: #86868b; font-size: 12px; margin: 16px 0 12px; gap: 12px; }
+.social-divider::before, .social-divider::after { content: ""; flex: 1; height: 1px; background: #e5e5ea; }
+.social-buttons { display: flex; flex-direction: column; gap: 8px; }
+.social-btn { padding: 12px; border: 1px solid #e5e5ea; border-radius: 10px; background: white; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.2s; }
+.social-btn:hover { background: #f5f5f7; }
+.social-btn.kakao { background: #FEE500; border-color: #FEE500; color: #191919; }
+.social-btn.kakao:hover { background: #ffd700; }
+.social-btn.naver { background: #03C75A; border-color: #03C75A; color: white; }
+.social-btn.naver:hover { background: #02b551; }
+.social-btn.google { background: white; }
+.user-menu { position: relative; }
+.user-chip { display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; background: #f5f5f7; border-radius: 999px; cursor: pointer; font-size: 14px; font-weight: 600; color: #1d1d1f; border: none; transition: background 0.2s; }
+.user-chip:hover { background: #e5e5ea; }
+.user-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #007aff, #5ac8fa); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+.user-dropdown { position: absolute; top: calc(100% + 8px); right: 0; background: white; border-radius: 14px; box-shadow: 0 12px 36px rgba(0,0,0,0.15); padding: 8px; min-width: 220px; z-index: 1100; display: none; border: 1px solid #f0f0f0; }
+.user-dropdown.active { display: block; }
+.user-dropdown-header { padding: 12px 14px; border-bottom: 1px solid #f0f0f0; margin-bottom: 6px; }
+.user-dropdown-name { font-weight: 700; font-size: 14px; color: #1d1d1f; }
+.user-dropdown-email { font-size: 12px; color: #86868b; margin-top: 2px; }
+.user-dropdown a, .user-dropdown button { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; font-size: 14px; color: #1d1d1f; text-decoration: none; background: none; border: none; width: 100%; text-align: left; cursor: pointer; font-family: inherit; transition: background 0.15s; }
+.user-dropdown a:hover, .user-dropdown button:hover { background: #f5f5f7; }
+.user-dropdown .logout-btn { color: #ff3b30; }
+@media (max-width: 600px) { .modal-box { padding: 32px 24px; max-width: 100%; } }
+
 /* CATEGORY PAGE HERO (sub-pages) */
 .page-hero { background: linear-gradient(135deg, #f0f7ff 0%, #e1efff 100%); padding: 60px 0 50px; text-align: center; }
 .page-hero h1 { font-size: 42px; font-weight: 800; color: #1d1d1f; margin-bottom: 14px; letter-spacing: -0.5px; }
