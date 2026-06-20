@@ -1,0 +1,18 @@
+{
+  "name": "onetap-reboot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OneTap ReBoot — MVP installer (Apple CDN firmware fetch)",
+  "main": "app.js",
+  "bin": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build:win": "pkg . --targets node22-win-x64 --output dist/OneTapReBoot-Setup.exe --compress GZip"
+  },
+  "pkg": {
+    "assets": [],
+    "scripts": ["app.js"],
+    "targets": ["node22-win-x64"]
+  },
+  "engines": { "node": ">=18" }
+}
