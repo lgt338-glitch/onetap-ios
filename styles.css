@@ -358,6 +358,86 @@ html { scroll-behavior: smooth; }
 .page-hero.green { background: linear-gradient(135deg, #e8f8f0 0%, #d4f0e0 100%); }
 .page-hero.green .breadcrumb { background: rgba(52,199,89,0.12); color: #34c759; }
 
+/* FAQ / LEGAL / SUPPORT PAGES */
+.faq-layout { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+.faq-sidebar { position: sticky; top: 100px; background: white; border: 1px solid #ececec; border-radius: 14px; padding: 18px; }
+.faq-side-title { font-size: 11px; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 1.2px; padding: 4px 12px 12px; }
+.faq-side-item { display: block; padding: 10px 14px; font-size: 14px; color: #1d1d1f; border-radius: 8px; margin-bottom: 2px; transition: background .15s, color .15s; }
+.faq-side-item:hover { background: #f6f8fb; color: #007aff; }
+.faq-content { display: flex; flex-direction: column; gap: 40px; }
+.faq-section { background: white; border-radius: 16px; padding: 32px 32px 24px; border: 1px solid #ececec; scroll-margin-top: 90px; }
+.faq-section-title { font-size: 22px; font-weight: 800; color: #0a1628; margin-bottom: 20px; letter-spacing: -0.3px; }
+.faq-item { border-bottom: 1px solid #f0f0f0; padding: 4px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-item summary { padding: 16px 8px; font-size: 15px; font-weight: 600; color: #1d1d1f; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: color .15s; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 22px; font-weight: 300; color: #86868b; transition: transform .2s ease; flex-shrink: 0; }
+.faq-item[open] summary::after { transform: rotate(45deg); color: #007aff; }
+.faq-item summary:hover { color: #007aff; }
+.faq-body { padding: 4px 8px 18px; color: #4a5568; font-size: 14.5px; line-height: 1.75; word-break: keep-all; }
+.faq-body p + p, .faq-body p + ul, .faq-body p + ol, .faq-body ul + p, .faq-body ol + p { margin-top: 10px; }
+.faq-body ul, .faq-body ol { padding-left: 20px; }
+.faq-body li { margin: 4px 0; }
+.faq-body a { color: #007aff; font-weight: 600; }
+.faq-body a:hover { text-decoration: underline; }
+.faq-end-cta { text-align: center; background: white; border-radius: 16px; padding: 36px; border: 1px solid #ececec; }
+.faq-end-cta p { color: #4a5568; font-size: 16px; margin-bottom: 18px; }
+
+/* LEGAL DOCUMENT */
+.legal-page { max-width: 840px; margin: 0 auto; background: white; border-radius: 16px; padding: 56px 56px 48px; border: 1px solid #ececec; }
+.legal-page .legal-meta { color: #86868b; font-size: 13px; margin-bottom: 8px; }
+.legal-page h2 { font-size: 24px; font-weight: 800; color: #0a1628; margin: 32px 0 14px; letter-spacing: -0.3px; line-height: 1.3; }
+.legal-page h2:first-of-type { margin-top: 8px; }
+.legal-page h3 { font-size: 16px; font-weight: 700; color: #1d1d1f; margin: 20px 0 8px; }
+.legal-page p { color: #4a5568; font-size: 15px; line-height: 1.8; margin-bottom: 12px; word-break: keep-all; }
+.legal-page ul, .legal-page ol { padding-left: 22px; margin-bottom: 14px; color: #4a5568; font-size: 15px; line-height: 1.8; }
+.legal-page li { margin: 6px 0; word-break: keep-all; }
+.legal-page table { width: 100%; border-collapse: collapse; margin: 16px 0 22px; font-size: 14px; }
+.legal-page th, .legal-page td { border: 1px solid #ececec; padding: 12px 14px; text-align: left; vertical-align: top; }
+.legal-page th { background: #f7f8fa; font-weight: 700; color: #1d1d1f; }
+.legal-page td { color: #4a5568; }
+.legal-page .legal-callout { background: #f0f7ff; border-left: 4px solid #007aff; padding: 16px 20px; border-radius: 6px; margin: 20px 0; color: #0a1628; }
+.legal-page strong { color: #0a1628; }
+
+/* CONTACT / SUPPORT */
+.support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 40px; }
+.support-card { background: white; border: 1px solid #ececec; border-radius: 16px; padding: 28px; transition: border-color .2s, transform .2s; }
+.support-card:hover { border-color: #d8e6ff; transform: translateY(-2px); }
+.support-card .support-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+.support-card h3 { font-size: 18px; font-weight: 800; color: #0a1628; margin-bottom: 8px; }
+.support-card p { font-size: 14px; color: #4a5568; line-height: 1.65; margin-bottom: 12px; }
+.support-card .support-meta { font-size: 13px; color: #86868b; }
+.support-card .support-meta strong { color: #1d1d1f; }
+.contact-form { background: white; border: 1px solid #ececec; border-radius: 16px; padding: 36px; max-width: 760px; margin: 0 auto; }
+.contact-form h2 { font-size: 22px; font-weight: 800; color: #0a1628; margin-bottom: 8px; }
+.contact-form .form-desc { color: #4a5568; font-size: 14px; margin-bottom: 24px; }
+.contact-form .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.contact-form label { display: block; font-size: 13px; font-weight: 700; color: #1d1d1f; margin: 12px 0 6px; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form select, .contact-form textarea { width: 100%; padding: 12px 14px; border: 1px solid #e5e5ea; border-radius: 10px; font-size: 14px; font-family: inherit; outline: none; transition: border-color .15s, box-shadow .15s; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: #007aff; box-shadow: 0 0 0 3px rgba(0,122,255,0.1); }
+.contact-form textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+.contact-form .submit-row { margin-top: 22px; display: flex; gap: 12px; align-items: center; }
+.contact-form .form-hint { font-size: 12px; color: #86868b; }
+
+/* ABOUT */
+.about-section { background: white; border: 1px solid #ececec; border-radius: 16px; padding: 44px; margin-bottom: 24px; }
+.about-section h2 { font-size: 26px; font-weight: 800; color: #0a1628; margin-bottom: 14px; letter-spacing: -0.3px; }
+.about-section p { color: #4a5568; font-size: 15px; line-height: 1.8; margin-bottom: 12px; word-break: keep-all; }
+.about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 24px 0 8px; }
+.about-stat { text-align: center; padding: 24px 12px; background: #f7f8fa; border-radius: 12px; }
+.about-stat .num { font-size: 32px; font-weight: 800; color: #007aff; line-height: 1; margin-bottom: 6px; }
+.about-stat .label { font-size: 13px; color: #4a5568; }
+.about-timeline { position: relative; padding-left: 28px; margin-top: 8px; }
+.about-timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: #e5e5ea; }
+.about-timeline-item { position: relative; padding: 6px 0 18px; }
+.about-timeline-item::before { content: ""; position: absolute; left: -25px; top: 12px; width: 12px; height: 12px; border-radius: 50%; background: #007aff; border: 3px solid white; box-shadow: 0 0 0 2px #007aff; }
+.about-timeline-item .year { font-weight: 800; color: #007aff; font-size: 14px; margin-bottom: 4px; }
+.about-timeline-item .desc { color: #4a5568; font-size: 14.5px; line-height: 1.65; }
+.biz-info-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.biz-info-table th, .biz-info-table td { padding: 12px 16px; border-bottom: 1px solid #ececec; text-align: left; font-size: 14px; }
+.biz-info-table th { width: 180px; color: #1d1d1f; font-weight: 700; background: #f7f8fa; }
+.biz-info-table td { color: #4a5568; }
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .nav { display: none; }
@@ -395,6 +475,23 @@ html { scroll-behavior: smooth; }
   .page-hero h1 { font-size: 30px; }
   .cta-section { padding: 64px 0; }
   .cta-section h2 { font-size: 28px; }
+}
+@media (max-width: 1024px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 24px; }
+  .faq-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 6px; padding: 14px; }
+  .faq-side-title { width: 100%; padding: 0 0 8px; }
+  .faq-side-item { padding: 8px 14px; font-size: 13px; background: #f5f5f7; }
+  .faq-section { padding: 24px 22px 18px; }
+  .legal-page { padding: 36px 28px; }
+  .legal-page h2 { font-size: 20px; }
+  .support-grid { grid-template-columns: 1fr; gap: 16px; }
+  .contact-form { padding: 28px 22px; }
+  .contact-form .form-row-2 { grid-template-columns: 1fr; }
+  .about-section { padding: 28px 22px; }
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+  .about-section h2 { font-size: 22px; }
+  .biz-info-table th { width: 110px; padding: 10px; }
+  .biz-info-table td { padding: 10px; }
 }
 @media (max-width: 600px) {
   .hero-slider { min-height: 460px; }

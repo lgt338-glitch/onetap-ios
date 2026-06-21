@@ -20,6 +20,12 @@
       '데이터 전송 - OneTap iOS': 'Data Transfer - OneTap iOS',
       '암호 해제 - OneTap iOS': 'Unlock Solutions - OneTap iOS',
       '🔥 베스트 세일 - OneTap iOS': '🔥 Best Sale - OneTap iOS',
+      '자주 묻는 질문 - OneTap iOS': 'FAQ - OneTap iOS',
+      '환불 정책 - OneTap iOS': 'Refund Policy - OneTap iOS',
+      '개인정보 처리방침 - OneTap iOS': 'Privacy Policy - OneTap iOS',
+      '서비스 이용약관 - OneTap iOS': 'Terms of Service - OneTap iOS',
+      '고객센터 - OneTap iOS': 'Support Center - OneTap iOS',
+      '회사 정보 - OneTap iOS': 'About Us - OneTap iOS',
 
       // ── 상단바 ──
       '🎉 신규 회원 가입 시': '🎉 Sign up & get a',
@@ -468,6 +474,12 @@
       '데이터 전송 - OneTap iOS': '数据传输 - OneTap iOS',
       '암호 해제 - OneTap iOS': '密码解锁 - OneTap iOS',
       '🔥 베스트 세일 - OneTap iOS': '🔥 限时特惠 - OneTap iOS',
+      '자주 묻는 질문 - OneTap iOS': '常见问题 - OneTap iOS',
+      '환불 정책 - OneTap iOS': '退款政策 - OneTap iOS',
+      '개인정보 처리방침 - OneTap iOS': '隐私政策 - OneTap iOS',
+      '서비스 이용약관 - OneTap iOS': '服务条款 - OneTap iOS',
+      '고객센터 - OneTap iOS': '客服中心 - OneTap iOS',
+      '회사 정보 - OneTap iOS': '关于公司 - OneTap iOS',
 
       // ── 顶栏 ──
       '🎉 신규 회원 가입 시': '🎉 新用户注册即送',
