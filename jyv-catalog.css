@@ -1,0 +1,426 @@
+/* ===== JY VISIONS Korea — LED Catalog Styles ===== */
+
+:root {
+  --jv-ink: #0a1628;
+  --jv-ink-2: #4a5568;
+  --jv-line: #e7ebf0;
+  --jv-accent: #0066ff;
+  --jv-accent-2: #00b4d8;
+  --jv-bg-soft: #f5f7fb;
+  --jv-bg-dark: #0a1628;
+}
+
+/* Logo override for JY brand */
+.logo-icon { font-size: 13px !important; letter-spacing: -0.5px; background: linear-gradient(135deg, #0066ff, #00b4d8) !important; box-shadow: 0 2px 8px rgba(0,102,255,0.30) !important; }
+
+/* ----- HERO ----- */
+.jv-hero {
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(0,180,216,0.18), transparent 60%),
+    radial-gradient(900px 500px at 8% 110%, rgba(0,102,255,0.18), transparent 60%),
+    linear-gradient(180deg, #0a1628 0%, #122545 100%);
+  color: white;
+  padding: 96px 0 88px;
+  position: relative;
+  overflow: hidden;
+}
+.jv-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  pointer-events: none;
+}
+.jv-hero-inner { position: relative; max-width: 880px; }
+.jv-eyebrow {
+  display: inline-block;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #b8d4ff;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+}
+.jv-hero h1 {
+  font-size: 52px;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin-bottom: 22px;
+  word-break: keep-all;
+}
+.jv-hero h1 .hl {
+  background: linear-gradient(135deg, #5ac8fa 0%, #00b4d8 50%, #5ac8fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.jv-lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #c5d3e8;
+  max-width: 720px;
+  margin-bottom: 38px;
+  word-break: keep-all;
+}
+.jv-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 720px;
+}
+.jv-stat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 18px 16px;
+  backdrop-filter: blur(8px);
+}
+.jv-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #5ac8fa;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+.jv-stat-label {
+  font-size: 12px;
+  color: #a8bcd6;
+  font-weight: 500;
+}
+
+/* ----- SECTIONS ----- */
+.jv-section { padding: 88px 0; background: white; }
+.jv-section-alt { background: var(--jv-bg-soft); }
+
+.jv-section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.jv-cat-tag {
+  display: inline-block;
+  background: rgba(0,102,255,0.10);
+  color: var(--jv-accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+}
+.jv-section-head h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--jv-ink);
+  letter-spacing: -0.6px;
+  margin-bottom: 14px;
+  word-break: keep-all;
+  line-height: 1.25;
+}
+.jv-section-head p {
+  font-size: 15px;
+  color: var(--jv-ink-2);
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* ----- CATEGORY TILES ----- */
+.jv-cat-nav { padding: 48px 0 8px; }
+.jv-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+.jv-cat-tile {
+  text-align: center;
+  padding: 22px 12px;
+  border: 1px solid var(--jv-line);
+  border-radius: 14px;
+  background: white;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.jv-cat-tile:hover {
+  border-color: var(--jv-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,102,255,0.12);
+}
+.jv-cat-icon { font-size: 28px; margin-bottom: 8px; }
+.jv-cat-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--jv-ink);
+  margin-bottom: 4px;
+}
+.jv-cat-sub {
+  font-size: 11px;
+  color: #86868b;
+  font-weight: 500;
+}
+
+/* ----- PRODUCT CARDS ----- */
+.jv-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.jv-product {
+  background: white;
+  border: 1px solid var(--jv-line);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s;
+}
+.jv-product:hover {
+  border-color: rgba(0,102,255,0.4);
+  box-shadow: 0 18px 40px rgba(10,22,40,0.10);
+  transform: translateY(-4px);
+}
+.jv-product-media {
+  position: relative;
+  background: linear-gradient(135deg, #f5f7fb 0%, #e8eef7 100%);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.jv-product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 18px;
+  transition: transform 0.4s;
+}
+.jv-product:hover .jv-product-media img { transform: scale(1.04); }
+.jv-product-media.no-img img { display: none; }
+.jv-product-media.no-img::before {
+  content: "🖼️ 이미지 준비 중";
+  color: #a0aec0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.jv-product-media-placeholder {
+  background: linear-gradient(135deg, #0a1628 0%, #1a3360 100%) !important;
+  color: white;
+  flex-direction: column;
+  gap: 10px;
+}
+.jv-placeholder-icon { font-size: 56px; }
+.jv-placeholder-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #5ac8fa;
+}
+
+.jv-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #ff3b30;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(255,59,48,0.30);
+}
+.jv-badge.new { background: #34c759; box-shadow: 0 4px 12px rgba(52,199,89,0.30); }
+
+.jv-product-body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.jv-product-tag {
+  font-size: 11px;
+  color: var(--jv-accent);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.jv-product h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--jv-ink);
+  letter-spacing: -0.4px;
+  margin-bottom: 10px;
+}
+.jv-product-body > p {
+  font-size: 14px;
+  color: var(--jv-ink-2);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  word-break: keep-all;
+}
+
+.jv-spec {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  border-top: 1px solid var(--jv-line);
+}
+.jv-spec li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--jv-line);
+  font-size: 13px;
+}
+.jv-spec li span {
+  color: #6e6e73;
+  font-weight: 500;
+}
+.jv-spec li b {
+  color: var(--jv-ink);
+  font-weight: 700;
+  text-align: right;
+}
+
+.jv-spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  margin-bottom: 0;
+}
+.jv-spec-row .jv-spec { margin-bottom: 0; }
+
+.jv-more {
+  margin-top: auto;
+  display: inline-block;
+  color: var(--jv-accent);
+  font-weight: 700;
+  font-size: 14px;
+  transition: gap 0.2s, transform 0.2s;
+}
+.jv-more:hover { transform: translateX(4px); }
+
+/* ----- WIDE PRODUCT CARD (X Plus, SP, CAVE) ----- */
+.jv-product-wide {
+  grid-column: span 3;
+  flex-direction: row;
+}
+.jv-product-wide .jv-product-media {
+  flex: 0 0 50%;
+  aspect-ratio: auto;
+  min-height: 360px;
+}
+.jv-product-wide .jv-product-body {
+  flex: 1;
+  padding: 36px 40px;
+  justify-content: center;
+}
+.jv-product-wide h3 { font-size: 30px; margin-bottom: 14px; }
+.jv-product-wide > .jv-product-body > p {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+/* ----- CTA ----- */
+.jv-cta {
+  background:
+    radial-gradient(900px 500px at 90% 0%, rgba(0,180,216,0.18), transparent 60%),
+    linear-gradient(180deg, #0a1628 0%, #122545 100%);
+  color: white;
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+}
+.jv-cta-inner {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+.jv-cta h2 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  margin-bottom: 16px;
+  word-break: keep-all;
+  line-height: 1.25;
+}
+.jv-cta p {
+  font-size: 16px;
+  color: #c5d3e8;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  word-break: keep-all;
+}
+.jv-cta-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.jv-cta-row .btn-primary { font-size: 15px; padding: 15px 32px; }
+.jv-cta-row .btn-secondary {
+  font-size: 15px;
+  padding: 13px 30px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border-color: rgba(255,255,255,0.30);
+}
+.jv-cta-row .btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: white;
+}
+.jv-cta-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: #a8bcd6;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+/* ----- FOOTER OVERRIDE ----- */
+.jv-footer { background: #0a1628; }
+.jv-footer h4 { color: white; }
+.jv-footer ul li, .jv-footer ul li a { color: #a8bcd6; }
+.jv-footer ul li a:hover { color: #5ac8fa; }
+.jv-footer .footer-brand p { color: #a8bcd6; }
+.jv-footer .footer-bottom { border-top-color: rgba(255,255,255,0.08); color: #a8bcd6; }
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 1024px) {
+  .jv-products { grid-template-columns: repeat(2, 1fr); }
+  .jv-product-wide { grid-column: span 2; }
+  .jv-cat-grid { grid-template-columns: repeat(4, 1fr); }
+  .jv-hero h1 { font-size: 42px; }
+  .jv-hero-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .jv-section { padding: 64px 0; }
+  .jv-section-head h2 { font-size: 28px; }
+  .jv-products { grid-template-columns: 1fr; gap: 20px; }
+  .jv-product-wide { grid-column: span 1; flex-direction: column; }
+  .jv-product-wide .jv-product-media { flex: none; aspect-ratio: 4/3; min-height: 0; }
+  .jv-product-wide .jv-product-body { padding: 24px; }
+  .jv-product-wide h3 { font-size: 24px; }
+  .jv-cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .jv-hero { padding: 64px 0 56px; }
+  .jv-hero h1 { font-size: 32px; }
+  .jv-lead { font-size: 15px; }
+  .jv-cta h2 { font-size: 28px; }
+  .jv-spec-row { grid-template-columns: 1fr; }
+  .nav { display: none; }
+}
