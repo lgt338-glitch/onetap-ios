@@ -172,9 +172,9 @@ html { scroll-behavior: smooth; }
 .popular-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid #ececec; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; cursor: pointer; }
 .popular-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,0.08); border-color: #d8e6ff; }
 .popular-card.featured { border-color: #007aff; box-shadow: 0 10px 28px rgba(0,122,255,0.12); }
-.popular-image { height: 240px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
-.popular-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.12) 100%); z-index: 1; }
-.popular-image img.real { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform 0.5s; }
+.popular-image { height: 240px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f5f7fb 0%, #e8eef7 100%); }
+.popular-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.04) 100%); z-index: 1; pointer-events: none; }
+.popular-image img.real { width: 100%; height: 100%; object-fit: contain; padding: 22px; position: absolute; inset: 0; transition: transform 0.5s; }
 .popular-card:hover .popular-image img.real { transform: scale(1.04); }
 .popular-image .dot { position: absolute; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.12); z-index: 3; }
 .popular-image .dot1 { top: 14px; right: 14px; }
@@ -194,9 +194,9 @@ html { scroll-behavior: smooth; }
 /* LATEST VERSION FEATURED */
 .latest-feature { background: white; border-radius: 20px; padding: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; border: 1px solid #eef0f3; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
 .latest-image { height: 380px; border-radius: 16px; background: linear-gradient(135deg, #fff5e8, #ffd4b0); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-.latest-image img.real { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+.latest-image img.real { width: 100%; height: 100%; object-fit: contain; padding: 32px; border-radius: 16px; }
 .latest-image .float-thumb { position: absolute; width: 110px; height: 110px; background: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 32px rgba(0,0,0,0.18); overflow: hidden; z-index: 2; }
-.latest-image .float-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.latest-image .float-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
 .latest-image .thumb1 { top: 24px; left: 24px; transform: rotate(-5deg); }
 .latest-image .thumb2 { bottom: 24px; right: 24px; transform: rotate(5deg); }
 .latest-content .badge-new { display: inline-block; background: #ffe9d4; color: #ff6b00; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.3px; }
