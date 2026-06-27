@@ -502,8 +502,8 @@
           <h3>${c.name}</h3>
           <p>${c.desc}</p>
           <div class="card-buttons">
-            <a href="${c.link}" class="${c.featured ? 'btn-orange' : 'btn-orange outline'}" style="text-decoration:none;text-align:center;">무료 다운로드</a>
-            <a href="${c.link}" class="btn-dark" style="text-decoration:none;text-align:center;">지금 구매하기</a>
+            <a href="javascript:void(0)" onclick="openDownload('${c.name}')" class="${c.featured ? 'btn-orange' : 'btn-orange outline'}" style="text-decoration:none;text-align:center;">무료 다운로드</a>
+            <a href="javascript:void(0)" onclick="openPricing('${c.name}')" class="btn-dark" style="text-decoration:none;text-align:center;">지금 구매하기</a>
           </div>
         </div>
       </div>
@@ -702,6 +702,113 @@
     </div>
   </div>
 </footer>
+
+<!-- DOWNLOAD MODAL -->
+<div class="modal-overlay" id="downloadModal" onclick="closeModal('downloadModal', event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('downloadModal')" aria-label="닫기">×</button>
+    <div class="modal-icon">📥</div>
+    <h3 id="dlTitle">무료 다운로드</h3>
+    <p>운영체제를 선택해 주세요. 설치 후 30일 무료 체험 + 환불 보장.</p>
+    <div class="dl-options">
+      <a href="javascript:void(0)" onclick="startDownload('win')" class="dl-option" id="dlWin">
+        <div class="dl-icon">🪟</div>
+        <div class="dl-name">Windows</div>
+        <div class="dl-ver">Win 10 / 11 (64bit)</div>
+      </a>
+      <a href="javascript:void(0)" onclick="startDownload('mac')" class="dl-option" id="dlMac">
+        <div class="dl-icon">🍎</div>
+        <div class="dl-name">macOS</div>
+        <div class="dl-ver">macOS 11 이상</div>
+      </a>
+    </div>
+    <p class="dl-note">📦 약 60MB · 한국어 지원 · 30일 환불 보장</p>
+  </div>
+</div>
+
+<!-- PRICING MODAL -->
+<div class="modal-overlay" id="pricingModal" onclick="closeModal('pricingModal', event)">
+  <div class="modal-box modal-wide">
+    <button class="modal-close" onclick="closeModal('pricingModal')" aria-label="닫기">×</button>
+    <div class="modal-icon">💎</div>
+    <h3 id="prTitle">요금제를 선택해 주세요</h3>
+    <p>인기 플랜은 <b>연간 라이선스</b>입니다. 모든 플랜에 30일 환불 보장이 포함됩니다.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-label">월간 라이선스</div>
+        <div class="price-amount">₩29,800<span> / 월</span></div>
+        <ul>
+          <li>1대 PC 사용</li>
+          <li>30일 환불 보장</li>
+          <li>이메일 고객 지원</li>
+          <li>월 자동 결제</li>
+        </ul>
+        <a href="javascript:void(0)" onclick="startCheckout('monthly')" class="btn-primary">구매하기</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">🔥 60% 할인 · 가장 인기</div>
+        <div class="price-label">연간 라이선스</div>
+        <div class="price-amount">₩59,800<span> / 년</span></div>
+        <div class="price-strike">정가 ₩149,000</div>
+        <ul>
+          <li>1대 PC 사용</li>
+          <li>30일 환불 보장</li>
+          <li>1:1 한국어 우선 지원</li>
+          <li>1년 무료 업데이트</li>
+        </ul>
+        <a href="javascript:void(0)" onclick="startCheckout('yearly')" class="btn-primary">구매하기</a>
+      </div>
+      <div class="price-card">
+        <div class="price-label">평생 라이선스</div>
+        <div class="price-amount">₩129,800<span> / 평생</span></div>
+        <ul>
+          <li>2대 PC 사용</li>
+          <li>30일 환불 보장</li>
+          <li>1:1 한국어 우선 지원</li>
+          <li>평생 무료 업데이트</li>
+        </ul>
+        <a href="javascript:void(0)" onclick="startCheckout('lifetime')" class="btn-primary">구매하기</a>
+      </div>
+    </div>
+    <p class="modal-foot-note">💳 신용카드 · 카카오페이 · 네이버페이 · PayPal 지원</p>
+  </div>
+</div>
+
+<script>
+  let currentProduct = '';
+  function openDownload(name) {
+    currentProduct = name;
+    document.getElementById('dlTitle').textContent = name + ' — 무료 다운로드';
+    document.getElementById('downloadModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function openPricing(name) {
+    currentProduct = name;
+    document.getElementById('prTitle').textContent = name + ' 요금제';
+    document.getElementById('pricingModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id, e) {
+    if (e && e.target.id !== id) return;
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function startDownload(os) {
+    alert(currentProduct + ' (' + (os === 'win' ? 'Windows' : 'macOS') + ') 다운로드를 시작합니다.\n\n실제 배포 파일이 준비되면 이 자리에서 자동으로 받아집니다.');
+    closeModal('downloadModal');
+  }
+  function startCheckout(plan) {
+    const labels = { monthly: '월간', yearly: '연간', lifetime: '평생' };
+    alert(currentProduct + ' — ' + labels[plan] + ' 플랜으로 결제 페이지로 이동합니다.\n\n결제 게이트웨이(카카오페이/네이버페이/PayPal) 연동이 준비되면 즉시 결제 가능합니다.');
+    closeModal('pricingModal');
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal('downloadModal');
+      closeModal('pricingModal');
+    }
+  });
+</script>
 
 <script src="i18n.js"></script>
 <script src="auth.js"></script>
