@@ -2,5 +2,8 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('onetap', {
   getDeviceInfo: () => ipcRenderer.invoke('device:info'),
-  listDevices: () => ipcRenderer.invoke('device:list'),
+  enterRecovery: () => ipcRenderer.invoke('recovery:enter'),
+  exitRecovery: () => ipcRenderer.invoke('recovery:exit'),
+  listBackups: () => ipcRenderer.invoke('backup:list'),
+  checkIpsw: () => ipcRenderer.invoke('ipsw:check'),
 });

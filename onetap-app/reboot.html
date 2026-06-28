@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>OneTap ReBoot</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-reboot">
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark blue">🔧</div>
+    <div>
+      <div class="brand-name">OneTap ReBoot</div>
+      <div class="brand-ver">시스템 복구 · v0.2</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn active" data-view="device">📱 디바이스 정보</button>
+    <button class="nav-btn" data-view="recovery">🔧 복구 모드</button>
+    <button class="nav-btn" data-view="backup">💾 백업 관리</button>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="legal">오픈소스 기반<br>pymobiledevice3 · MIT</div>
+  </div>
+</aside>
+
+<main class="main">
+
+  <header class="topbar">
+    <div>
+      <h1 id="viewTitle">디바이스 정보</h1>
+      <p id="viewSub">USB로 연결된 iPhone / iPad 의 상태를 확인합니다.</p>
+    </div>
+    <button id="refreshBtn" class="btn-primary">🔄 새로 고침</button>
+  </header>
+
+  <!-- VIEW: DEVICE -->
+  <section id="view-device" class="view">
+    <div id="statusBar" class="status status-wait">
+      <span class="dot"></span><span id="statusText">디바이스 확인 중...</span>
+    </div>
+    <div id="deviceCard" class="card hidden">
+      <div class="device-head">
+        <div class="device-emoji">📱</div>
+        <div>
+          <div id="devName" class="device-name">—</div>
+          <div id="devModel" class="device-sub">—</div>
+        </div>
+      </div>
+      <div class="grid" id="devGrid"></div>
+    </div>
+    <div id="emptyState" class="empty">
+      <div class="empty-icon">🔌</div>
+      <div class="empty-title">디바이스를 연결해 주세요</div>
+      <div class="empty-desc">USB 케이블 연결 후 "이 컴퓨터를 신뢰" 선택</div>
+    </div>
+  </section>
+
+  <!-- VIEW: RECOVERY -->
+  <section id="view-recovery" class="view hidden">
+    <div class="warn-box">
+      ⚠️ <b>주의:</b> 복구 모드 진입 시 디바이스는 재부팅됩니다. 작업 중인 내용이 있다면 먼저 저장하세요.
+    </div>
+
+    <div class="action-grid">
+      <div class="action-card">
+        <div class="action-icon">🔄</div>
+        <h3>강제 재시동</h3>
+        <p>iPhone 8 이상: 볼륨↑ → 볼륨↓ → 측면 버튼 길게 누름<br>Apple 로고가 나올 때까지 유지</p>
+        <button class="btn-secondary" disabled>🛈 수동 조작 필요</button>
+      </div>
+
+      <div class="action-card">
+        <div class="action-icon">🔧</div>
+        <h3>복구 모드 진입</h3>
+        <p>연결된 디바이스를 복구 모드로 전환합니다. iOS 펌웨어 복원 직전에 사용하세요.</p>
+        <button id="enterRecoveryBtn" class="btn-primary">복구 모드 진입</button>
+      </div>
+
+      <div class="action-card">
+        <div class="action-icon">✅</div>
+        <h3>복구 모드 해제</h3>
+        <p>복구 모드 / DFU 모드에서 정상 부팅 상태로 빠져나옵니다.</p>
+        <button id="exitRecoveryBtn" class="btn-primary">복구 모드 해제</button>
+      </div>
+    </div>
+
+    <div id="recoveryResult" class="result-box hidden"></div>
+  </section>
+
+  <!-- VIEW: BACKUP -->
+  <section id="view-backup" class="view hidden">
+    <div class="info-box">
+      💾 이 PC 에 저장된 iTunes / Finder 백업 폴더를 검색합니다.<br>
+      Windows 기본 경로: <code>%APPDATA%\Apple\MobileSync\Backup\</code>
+    </div>
+    <button id="loadBackupsBtn" class="btn-primary" style="margin-bottom: 20px;">📂 백업 목록 불러오기</button>
+    <div id="backupList"></div>
+  </section>
+
+</main>
+
+<script src="reboot.js"></script>
+</body>
+</html>

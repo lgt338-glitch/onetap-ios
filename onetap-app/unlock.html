@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>OneTap UnLock</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-unlock">
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark red">🔓</div>
+    <div>
+      <div class="brand-name">OneTap UnLock</div>
+      <div class="brand-ver">잠금 해제 · v0.2</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn active" data-view="device">📱 디바이스 정보</button>
+    <button class="nav-btn" data-view="unlock">🔓 화면 잠금 해제</button>
+    <button class="nav-btn" data-view="info">ℹ️ 한계 사항</button>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="legal">오픈소스 기반<br>pymobiledevice3 · MIT</div>
+  </div>
+</aside>
+
+<main class="main">
+
+  <header class="topbar">
+    <div>
+      <h1 id="viewTitle">디바이스 정보</h1>
+      <p id="viewSub">잠금 상태와 활성화 상태를 먼저 확인합니다.</p>
+    </div>
+    <button id="refreshBtn" class="btn-primary">🔄 새로 고침</button>
+  </header>
+
+  <!-- VIEW: DEVICE -->
+  <section id="view-device" class="view">
+    <div id="statusBar" class="status status-wait">
+      <span class="dot"></span><span id="statusText">디바이스 확인 중...</span>
+    </div>
+    <div id="deviceCard" class="card hidden">
+      <div class="device-head">
+        <div class="device-emoji">🔓</div>
+        <div>
+          <div id="devName" class="device-name">—</div>
+          <div id="devModel" class="device-sub">—</div>
+        </div>
+      </div>
+      <div class="grid" id="devGrid"></div>
+    </div>
+    <div id="emptyState" class="empty">
+      <div class="empty-icon">🔌</div>
+      <div class="empty-title">디바이스를 연결해 주세요</div>
+      <div class="empty-desc">USB 케이블 연결 후 "이 컴퓨터를 신뢰" 선택</div>
+    </div>
+  </section>
+
+  <!-- VIEW: UNLOCK -->
+  <section id="view-unlock" class="view hidden">
+    <div class="danger-box">
+      🚨 <b>중요:</b> 화면 잠금 해제 = <b>공장 초기화 (DFU 복원)</b> 입니다.<br>
+      <b>디바이스 내 모든 데이터·설정이 영구 삭제됩니다.</b> Tenorshare 4uKey 등 시중 제품들이 광고하는 "데이터 보존 잠금 해제"는 기술적으로 불가능합니다.
+    </div>
+
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>iCloud Find My 확인</h3>
+          <p>잠금 해제 전 "내 iPhone 찾기"가 켜져 있다면 활성화 잠금이 작동합니다. Apple ID 비밀번호를 알고 있어야 복원 후 다시 사용 가능합니다.</p>
+          <div id="findMyState" class="state-chip">확인 중...</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>호환 IPSW 확인</h3>
+          <p>Apple 이 현재 서명 중인 펌웨어를 확인합니다. 서명 만료된 펌웨어는 설치할 수 없습니다.</p>
+          <button id="checkIpswBtn" class="btn-secondary">서명 펌웨어 조회</button>
+          <div id="ipswResult" class="result-inline"></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>DFU 모드 진입 가이드</h3>
+          <p><b>iPhone 8 이상</b>: 측면 버튼 + 볼륨↓ 10초 → 측면 버튼만 떼고 볼륨↓ 5초 유지<br>
+             화면이 검게 유지되면 성공.</p>
+          <button id="enterDfuBtn" class="btn-secondary">복구 모드 진입 (DFU 대체)</button>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>공장 초기화 복원</h3>
+          <p>iTunes / Finder 또는 <code>idevicerestore</code> 로 펌웨어를 플래싱합니다.<br>
+             <b>이 작업은 본 PoC v0.2 에는 아직 구현되지 않았습니다.</b> Week 6-7 에 추가 예정.</p>
+          <button class="btn-primary" disabled>🚧 다음 버전에서 제공</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEW: INFO -->
+  <section id="view-info" class="view hidden">
+    <div class="card">
+      <h2 style="margin-bottom: 16px;">기술적으로 가능한 것 vs 불가능한 것</h2>
+      <table class="info-table">
+        <tr><th>작업</th><th>가능 여부</th></tr>
+        <tr><td>화면 잠금 비밀번호 해제 (데이터 초기화 수반)</td><td class="ok">✅ 가능</td></tr>
+        <tr><td>Screen Time 비밀번호 해제 (iOS 12-13)</td><td class="ok">✅ 가능</td></tr>
+        <tr><td><b>데이터 보존 잠금 해제</b></td><td class="ng">❌ 불가능 (모든 도구)</td></tr>
+        <tr><td><b>iCloud 활성화 잠금 우회 (A12+ 칩)</b></td><td class="ng">❌ 불가능 (Apple 보안)</td></tr>
+        <tr><td>iCloud 활성화 잠금 우회 (A11 이하)</td><td class="partial">⚠️ checkm8 익스플로잇으로 일부 가능</td></tr>
+        <tr><td>MDM 잠금 해제 (구형 iOS)</td><td class="partial">⚠️ 일부 가능 (도덕적 회색지대)</td></tr>
+        <tr><td>도난폰 활성화 잠금 우회</td><td class="ng">❌ 불가능 · 형법 362조 장물취득죄 적용</td></tr>
+      </table>
+      <p style="margin-top: 18px; font-size: 13px; color: #6e7681;">
+        ※ Tenorshare 4uKey 등 시중 제품 광고의 "데이터 보존 100% 해제"는 거짓 광고입니다. 본 OneTap UnLock 은 정직하게 한계를 명시합니다.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<script src="unlock.js"></script>
+</body>
+</html>

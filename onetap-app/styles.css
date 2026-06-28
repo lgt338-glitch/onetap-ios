@@ -176,3 +176,112 @@ button { font-family: inherit; cursor: pointer; }
 .error-hint ul { margin: 8px 0 0 22px; }
 .error-hint li { padding: 3px 0; }
 .error-hint code { background: #eef1f5; padding: 2px 6px; border-radius: 4px; font-family: "Consolas", monospace; font-size: 12px; }
+
+/* ---- THEME (per product) ---- */
+.theme-reboot .brand-mark { background: linear-gradient(135deg, #007aff, #5ac8fa); }
+.theme-unlock .brand-mark { background: linear-gradient(135deg, #ff3b30, #ff9500); }
+.brand-mark.blue { background: linear-gradient(135deg, #007aff, #5ac8fa); }
+.brand-mark.red { background: linear-gradient(135deg, #ff3b30, #ff9500); }
+
+/* ---- BOXES ---- */
+.warn-box, .danger-box, .info-box {
+  padding: 14px 18px; border-radius: 10px; font-size: 13px;
+  line-height: 1.65; margin-bottom: 22px;
+}
+.warn-box { background: #fff7e6; color: #8a5a00; border: 1px solid #ffe2a8; }
+.danger-box { background: #fde8e7; color: #8a1d18; border: 1px solid #ffbcb5; font-size: 13.5px; }
+.info-box { background: #e8f1ff; color: #1a4d8f; border: 1px solid #b9d6ff; }
+.info-box code { background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-family: "Consolas", monospace; font-size: 12px; }
+
+/* ---- ACTION CARDS (ReBoot) ---- */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.action-card {
+  background: white;
+  border: 1px solid #e7ebf0;
+  border-radius: 14px;
+  padding: 22px 22px 20px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.action-icon { font-size: 28px; }
+.action-card h3 { font-size: 16px; font-weight: 800; color: #0a1628; }
+.action-card p { font-size: 13px; color: #515154; line-height: 1.6; min-height: 60px; }
+.action-card button { margin-top: auto; }
+.btn-secondary {
+  background: white; color: #0a1628; border: 1.5px solid #d0d7e0;
+  padding: 9px 16px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  transition: all 0.15s;
+}
+.btn-secondary:hover:not(:disabled) { border-color: #007aff; color: #007aff; }
+.btn-secondary:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ---- RESULT BOX ---- */
+.result-box {
+  padding: 14px 18px; border-radius: 10px; font-size: 13.5px;
+  line-height: 1.6; margin-top: 18px;
+}
+.result-ok { background: #e8f9ed; color: #1e6e30; border: 1px solid #b9e6c4; }
+.result-err { background: #fde8e7; color: #8a1d18; border: 1px solid #ffbcb5; }
+.result-inline { display: inline-block; margin-left: 12px; font-size: 12.5px; }
+
+/* ---- STEP LIST (UnLock) ---- */
+.step-list { display: flex; flex-direction: column; gap: 14px; }
+.step {
+  background: white; border: 1px solid #e7ebf0;
+  border-radius: 14px; padding: 18px 20px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.step-num {
+  flex-shrink: 0; width: 32px; height: 32px;
+  background: linear-gradient(135deg, #ff3b30, #ff9500);
+  color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px;
+}
+.step-body { flex: 1; }
+.step-body h3 { font-size: 15px; font-weight: 800; color: #0a1628; margin-bottom: 5px; }
+.step-body p { font-size: 13px; color: #515154; line-height: 1.65; margin-bottom: 10px; }
+.step-body code { background: #f0f2f5; padding: 1px 5px; border-radius: 3px; font-family: "Consolas", monospace; font-size: 11.5px; }
+
+.state-chip {
+  display: inline-block; padding: 5px 12px; border-radius: 999px;
+  font-size: 12px; font-weight: 700;
+  background: #f0f2f5; color: #6e7681;
+}
+.state-warn { background: #fff7e6; color: #8a5a00; }
+.state-ok { background: #e8f9ed; color: #1e6e30; }
+
+/* ---- IPSW ---- */
+.ipsw-list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.ipsw-row {
+  background: #f7f9fc; border: 1px solid #eef1f5;
+  padding: 8px 12px; border-radius: 8px;
+  font-size: 13px; color: #0a1628;
+}
+.ipsw-err { color: #8a1d18; font-size: 13px; padding-top: 8px; }
+
+/* ---- INFO TABLE (UnLock 한계 사항) ---- */
+.info-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.info-table th, .info-table td {
+  text-align: left; padding: 10px 14px;
+  border-bottom: 1px solid #eef1f5;
+}
+.info-table th { background: #f7f9fc; font-weight: 700; color: #6e7681; font-size: 12px; }
+.info-table td.ok { color: #1e6e30; font-weight: 700; }
+.info-table td.ng { color: #c4302b; font-weight: 700; }
+.info-table td.partial { color: #b76200; font-weight: 700; }
+
+/* ---- BACKUP LIST ---- */
+.backup-card {
+  background: white; border: 1px solid #e7ebf0;
+  border-radius: 12px; padding: 16px 18px;
+  margin-bottom: 10px;
+}
+.backup-name { font-size: 15px; font-weight: 800; color: #0a1628; margin-bottom: 6px; }
+.backup-meta { font-size: 12px; color: #6e7681; padding: 2px 0; }
+.loading { padding: 30px; text-align: center; color: #6e7681; font-size: 14px; }
+
