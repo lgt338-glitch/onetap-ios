@@ -1,0 +1,15 @@
+{
+  "name": "onetap-app",
+  "version": "0.1.0",
+  "description": "OneTap — iOS device utility (open source based)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "py:setup": "python -m venv py/.venv && py/.venv/Scripts/pip install -r py/requirements.txt"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

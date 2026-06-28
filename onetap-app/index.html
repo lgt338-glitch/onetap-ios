@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>OneTap</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-mark">1</div>
+    <div>
+      <div class="brand-name">OneTap</div>
+      <div class="brand-ver">v0.1.0 · PoC</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn active" data-view="device">📱 디바이스 정보</button>
+    <button class="nav-btn" data-view="reboot" disabled>🔧 시스템 복구 <span class="soon">SOON</span></button>
+    <button class="nav-btn" data-view="backup" disabled>💾 백업 추출 <span class="soon">SOON</span></button>
+    <button class="nav-btn" data-view="unlock" disabled>🔓 잠금 해제 <span class="soon">SOON</span></button>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="legal">정직한 오픈소스 기반 도구<br>pymobiledevice3 · MIT</div>
+  </div>
+</aside>
+
+<main class="main">
+
+  <header class="topbar">
+    <div>
+      <h1 id="viewTitle">디바이스 정보</h1>
+      <p id="viewSub">USB로 연결된 iPhone / iPad 의 상태를 확인합니다.</p>
+    </div>
+    <button id="refreshBtn" class="btn-primary">🔄 새로 고침</button>
+  </header>
+
+  <section id="deviceView" class="view">
+
+    <div id="statusBar" class="status status-wait">
+      <span class="dot"></span>
+      <span id="statusText">디바이스를 확인하는 중...</span>
+    </div>
+
+    <div id="deviceCard" class="card hidden">
+      <div class="device-head">
+        <div class="device-emoji">📱</div>
+        <div>
+          <div id="devName" class="device-name">—</div>
+          <div id="devModel" class="device-sub">—</div>
+        </div>
+      </div>
+      <div class="grid" id="devGrid"></div>
+    </div>
+
+    <div id="emptyState" class="empty">
+      <div class="empty-icon">🔌</div>
+      <div class="empty-title">연결된 디바이스가 없습니다</div>
+      <div class="empty-desc">
+        1. iPhone / iPad 를 USB 케이블로 PC 에 연결<br>
+        2. 디바이스 화면에서 "이 컴퓨터를 신뢰" 선택<br>
+        3. 오른쪽 위 새로 고침 클릭
+      </div>
+    </div>
+
+    <div id="errorBox" class="error hidden">
+      <div class="error-title">⚠️ 오류</div>
+      <pre id="errorText"></pre>
+      <div class="error-hint">
+        해결 체크리스트:
+        <ul>
+          <li><b>iTunes 가 설치되어 있나요?</b> — Apple Mobile Device USB 드라이버 필요</li>
+          <li><b>Python 환경 설정했나요?</b> — <code>npm run py:setup</code> 한 번 실행</li>
+          <li><b>케이블이 데이터 전송용인가요?</b> — 충전 전용 케이블 제외</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="renderer.js"></script>
+</body>
+</html>
